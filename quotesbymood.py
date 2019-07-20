@@ -1,29 +1,8 @@
-#from flask import Flask
 from twilio.rest import Client
 
-#
-#app = Flask(__name__)
-#@app.route('/localhost:5000/sms', methods = ['POST'])
-
-# Your Account Sid and Auth Token from twilio.com/console
-# DANGER! This is insecure. See http://twil.io/secure
 account_sid = 'ACcdc4119af79d46419a3501fdb27ef4e9'
 auth_token = 'f11f3f684ab5465f4c9458b4e859d37b'
 client = Client(account_sid, auth_token)
-
-# class User(object):
-#     def __init__(self, name, number, mood):
-#         self.name = name
-#         self.number = number
-#         self.mood = mood
-#     def setMood(self, num):
-#         self.mood = num
-#     def setNumber(self, phone_number):
-#         self.number = phone_number
-#
-#     def avgMood(self):
-#         return sum(self.mood.)
-#
 
 def send_sms(mood):
 #ideally there would be infinite number of quotes that we'd get from the web
