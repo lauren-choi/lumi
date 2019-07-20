@@ -30,26 +30,12 @@ def send_sms(mood):
     happyquotes = ["Being happy NEVER goes out of style - Lily Pulitzer", "When you love what you have, you have everything you need", "You are gold, baby. Solid gold."]
     mehquotes = ["Difficult roads often lead to beautiful destinations", "Great things never came from comfort zones. It's okay to feel lost.", "You won't find happiness if you keep looking in the smae place you lost it."]
     sadquotes = ["Don't wait until you reach your goal to be proud of yourself. Be proud of every step you take.", "Keep your head up, keep your heart strong.", "Trust me, the best has yet to come."]
-    print("set all quotes")
 
-    # if mood != 1 or mood != 2 or mood != 3:
-    #     print("null loop")
-    #     return;
-
-    #if user presses happy button
-    # if mood == 1:
-    #     for i in happyquotes:
-    #         message = client.messages \
-    #             .create(
-    #                  body = i,
-    #                  from_='+15108040184',
-    #                  to='+16096477951'
-    #              )
+    if mood != 1 or mood != 2 or mood != 3:
+         return;
 
     if mood == 1:
         happyiterator = iter(happyquotes)
-        print("set happy iter")
-
 
         message = client.messages \
             .create(
@@ -58,12 +44,10 @@ def send_sms(mood):
                  to='+16096477951'
              )
         print(message.sid)
-        #body = next(happyiterator)
 
     #if user presses meh button
     if mood == 2:
         mehiterator = iter(mehquotes)
-        print("set meh iter")
 
         message = client.messages \
             .create(
@@ -73,12 +57,9 @@ def send_sms(mood):
              )
         print(message.sid)
 
-        #body = next(mehiterator)
-
     #if user presses not okay button
     if mood == 3:
         saditerator = iter(sadquotes)
-        print("set sad iter")
 
         message = client.messages \
             .create(
@@ -91,6 +72,19 @@ def send_sms(mood):
 
 if __name__ == '__main__':
     send_sms(3)
+
+
+#if user presses happy button
+# if mood == 1:
+#     for i in happyquotes:
+#         message = client.messages \
+#             .create(
+#                  body = i,
+#                  from_='+15108040184',
+#                  to='+16096477951'
+#              )
+
+
 
         #body = next(sadquotes)
 
